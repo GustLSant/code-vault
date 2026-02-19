@@ -1,31 +1,17 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+	import Sidebar from './components/Sidebar.vue';
+
+
 </script>
 
+
 <template>
-  <div>
-    <p class="text-red-500">Texto vermelho para testar o tailwind</p>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+	<div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden bg-red-500">
+		<Sidebar />
+	</div>
 </template>
 
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
