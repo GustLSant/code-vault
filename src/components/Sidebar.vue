@@ -8,7 +8,7 @@
 
 
 <template>
-    <div class="absolute top-0 left-0 bottom-0 bg-blue-500 w-2xs flex flex-col p-2">
+    <div class="w-2xs flex flex-col p-4 bg-(--sidebar-color) text-(--sidebar-text-color) shadow-md">
         <div>
             <p class="text-xl">Game Atlas</p>
         </div>

@@ -1,3 +1,11 @@
 :root {
-  --primary-color: red;
+  --primary-color: #008CFF;
+  --secondary-color: #406380;
+  --accent-color: #FF9B00;
+
+  --background-color: white;
+  --text-color: black;
+
+  --sidebar-color: #0D1117;
+  --sidebar-text-color: #d2d2d2;
 }
