@@ -1,19 +1,20 @@
 <script setup lang="ts">
-    import Button from '@/components/commom/Button.vue';
     import PageHeader from '@/components/commom/PageHeader.vue';
     import PageSubtitle from '@/components/commom/PageSubtitle.vue';
     import Separator from '@/components/commom/Separator.vue';
+    import { Icon } from '@iconify/vue';
 
 
 </script>
 
 
 <template>
-    <PageHeader title="Movement Controller" resume="Componente de movimentação através dos inputs WASD baseado num node pivô"></PageHeader>
+    <PageHeader title="Fps Camera Controller" resume="Componente de câmera Fps"></PageHeader>
 
-    <Button icon="mdi:download" class="self-start" variant="filled-primary">
+    <div class="flex items-center gap-1 self-start p-2 bg-(--primary-color) text-white rounded-sm shadow-md">
+        <Icon icon="mdi:download" />
         <p>Download Componente</p>
-    </Button>
+    </div>
 
     <Separator class="my-2" />
 

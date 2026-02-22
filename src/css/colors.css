@@ -1,11 +1,17 @@
 :root {
-  --primary-color: #008CFF;
-  --secondary-color: #406380;
-  --accent-color: #FF9B00;
+	--primary-color: #008CFF;
+	--secondary-color: #406380;
+	--accent-color: #eb8d00;
+	--danger-color: #D10718;
 
-  --background-color: white;
-  --text-color: black;
+	--background-color: rgb(230, 230, 230);
+	--text-color: black;
 
-  --sidebar-color: #0D1117;
-  --sidebar-text-color: #d2d2d2;
+	--sidebar-color: #0D1117;
+	--sidebar-text-color: #d2d2d2;
+}
+
+.dark {
+	--background-color: rgb(37, 37, 37);
+	--text-color: white;
 }

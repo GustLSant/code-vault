@@ -1,21 +1,3 @@
-export type AppData = {
-    sections: Section[],
-}
+export type ElementType = 'library' | 'module' | 'component';
 
-export type Section = {
-    label: string,
-    icon: string,
-    pages: Page[],
-}
-
-export type Page = {
-    label: string,
-    icon: string,
-    content: Paragraphs[],
-    componentPath: string,
-}
-
-export type Paragraphs = {
-    title: string,
-    content: string[]
-}
+export type Library = 'godot' | 'vue' | 'general';

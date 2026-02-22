@@ -5,7 +5,7 @@
 
     const props = defineProps<{
         idx: number,
-        path: string,
+        routeName: string,
         name: string,
     }>();
 
@@ -20,7 +20,7 @@
     })
 
     function handleClickLink() {
-        if (props.idx === 1) { router.push({ path: props.path }) };
+        router.push({ name: props.routeName });
     }
 </script>
 
@@ -28,8 +28,7 @@
 <template>
     <div
         @click="handleClickLink"
-        class="flex items-center gap-1"
-        :class="(props.idx === 1) ? 'breadcrumb-element hover:cursor-pointer' : 'select-none'"
+        class="breadcrumb-element flex items-center gap-1 hover:cursor-pointer"
     >
         <Icon :icon="icon" class="icon" width="18" height="18" />
         <p class="name text-lg">{{ props.name }}</p>
