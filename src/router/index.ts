@@ -2,6 +2,8 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router"
 import { godotLibraryRoutes } from "./godotRoutes";
 import { vueLibraryRoutes } from "./vueRoutes";
 import { generalLibraryRoutes } from "./generalRoutes";
+import { cssLibraryRoutes } from "./cssRoutes";
+import { javascriptLibraryRoutes } from "./javaScriptRoutes";
 
 
 export const routes: Array<RouteRecordRaw> = [
@@ -12,6 +14,8 @@ export const routes: Array<RouteRecordRaw> = [
   },
   godotLibraryRoutes,
   vueLibraryRoutes,
+  cssLibraryRoutes,
+  javascriptLibraryRoutes,
   generalLibraryRoutes,
 ];
 

@@ -43,7 +43,8 @@ export const vueLibraryRoutes: RouteRecordRaw = {
     path: '/vue',
     name: 'vue',
     component: () => import('../views/LibraryViewer.vue'),
-    meta: { elementType: 'library', breadcrumbName: 'Vue' },
+    redirect: { name: 'vue.home' },
+    meta: { elementType: 'library', breadcrumbName: 'Vue', customIcon: 'akar-icons:vue-fill' },
     children: [
         vue_home,
         vue_input,

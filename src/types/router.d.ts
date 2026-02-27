@@ -5,5 +5,6 @@ declare module 'vue-router' {
     interface RouteMeta {
         breadcrumbName?: string,
         elementType?: ElementType,
+        customIcon?: string
     }
 };

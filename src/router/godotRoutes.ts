@@ -80,7 +80,8 @@ export const godotLibraryRoutes: RouteRecordRaw = {
     path: '/godot',
     name: 'godot',
     component: () => import('../views/LibraryViewer.vue'),
-    meta: { elementType: 'library', breadcrumbName: 'Godot' },
+    redirect: { name: 'godot.home' },
+    meta: { elementType: 'library', breadcrumbName: 'Godot', customIcon: 'devicon-plain:godot' },
     children: [
         godot_home,
         godot_player,
