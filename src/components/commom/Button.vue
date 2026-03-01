@@ -2,78 +2,55 @@
     import { Icon } from '@iconify/vue';
     import { computed, type CSSProperties } from 'vue';
 
-    type ButtonFilledVariant = 'filled-primary' | 'filled-secondary' | 'filled-accent' | 'filled-danger';
+    type ButtonFilledVariant =   'filled-primary'   | 'filled-secondary'   | 'filled-accent'   | 'filled-danger';
     type ButtonOutlinedVariant = 'outlined-primary' | 'outlined-secondary' | 'outlined-accent' | 'outlined-danger';
-    type ButtonVariant = ButtonFilledVariant | ButtonOutlinedVariant;
+    type ButtonNeutralVariant =  'neutral';
+    
+    type ButtonVariant = ButtonFilledVariant | ButtonOutlinedVariant | ButtonNeutralVariant;
 
     const props = defineProps<{ icon?: string, variant: ButtonVariant }>();
-
     const style = computed<CSSProperties>(getButtonStyle);
     
+    
     function getButtonStyle(): CSSProperties {
-        if (props.variant.includes('filled')) {
-            let colorVariable: string = '--primary-color';
-            
-            switch (props.variant) {
-                case 'filled-primary':
-                    colorVariable = '--primary-color';
-                    break;
-                case 'filled-secondary':
-                    colorVariable = '--secondary-color';
-                    break;
-                case 'filled-accent':
-                    colorVariable = '--accent-color';
-                    break;
-                case 'filled-danger':
-                    colorVariable = '--danger-color';
-                    break;
-                default:
-                    colorVariable = '--primary-color';
-                    break;
-            };
+        const style: CSSProperties = {};
 
-            const style: CSSProperties = {
-                backgroundColor: `var(${colorVariable})`,
-                color: 'white'
-            };
+        if (props.variant === 'neutral') {
+            style['border'] = '1px solid var(--input-border-color)';
+            style['backgroundColor'] = 'var(--input-bg-color)';
+            style['color'] = 'white';
 
-            return style;
+            style['--hover-color'] = 'var(--hover-input-bg-color)';
+            style['--hover-brightness'] = '100%';
         }
         else {
-            let colorVariable: string = '--primary-color';
-            
-            switch (props.variant) {
-                case 'outlined-primary':
-                    colorVariable = '--primary-color';
-                    break;
-                case 'outlined-secondary':
-                    colorVariable = '--secondary-color';
-                    break;
-                case 'outlined-accent':
-                    colorVariable = '--accent-color';
-                    break;
-                case 'outlined-danger':
-                    colorVariable = '--danger-color';
-                    break;
-                default:
-                    colorVariable = '--primary-color';
-                    break;
-            };
+            const variantSulfix: string = props.variant.split('-')[1]!;
+            const colorVariable = '--' + variantSulfix + '-color';
 
-            const style: CSSProperties = {
-                border: `1px solid var(${colorVariable})`,
-                color: `var(${colorVariable})`
-            };
+            if (props.variant.includes('filled')) {
+                style['backgroundColor'] = `var(${colorVariable})`;
+                style['color'] = 'white';
 
-            return style;
+                style['--hover-color'] = `var(${colorVariable})`;
+                style['--hover-brightness'] = '120%';
+            }
+            else {
+                style['border'] = `1px solid var(${colorVariable})`;
+                style['color'] = `var(${colorVariable})`;
+
+                style['--hover-color'] = `color-mix(in srgb, var(${colorVariable}) 10%, transparent)`;
+                style['--hover-brightness'] = '100%';
+            }
         }
+
+        return style;
     }
 </script>
 
 
 <template>
     <button
-        class="flex items-center gap-1 p-2 px-4 rounded-sm shadow-md hover:cursor-pointer hover:underline"
+        class="flex items-center gap-1.5 p-2 px-4 rounded-sm shadow-md hover:cursor-pointer hover:underline"
         :style="style"
     >
         <Icon v-if="props.icon" :icon="props.icon" width="20" height="20" />
@@ -83,5 +60,12 @@
 
 
 <style scoped>
-
+    button {
+        transition: background-color 0.15s, filter 0.15s;
+        
+        &:hover {
+            background-color: var(--hover-color) !important;
+            filter: brightness(var(--hover-brightness)) !important;
+        }
+    }
 </style>

@@ -4,6 +4,7 @@ import { vueLibraryRoutes } from "./vueRoutes";
 import { generalLibraryRoutes } from "./generalRoutes";
 import { cssLibraryRoutes } from "./cssRoutes";
 import { javascriptLibraryRoutes } from "./javaScriptRoutes";
+import { reactLibraryRoutes } from "./reactRoutes";
 
 
 export const routes: Array<RouteRecordRaw> = [
@@ -14,6 +15,7 @@ export const routes: Array<RouteRecordRaw> = [
   },
   godotLibraryRoutes,
   vueLibraryRoutes,
+  reactLibraryRoutes,
   cssLibraryRoutes,
   javascriptLibraryRoutes,
   generalLibraryRoutes,

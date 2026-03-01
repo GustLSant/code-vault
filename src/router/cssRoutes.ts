@@ -14,7 +14,7 @@ export const cssLibraryRoutes: RouteRecordRaw = {
     name: 'css',
     component: () => import('../views/LibraryViewer.vue'),
     redirect: { name: 'css.home' },
-    meta: { elementType: 'library', breadcrumbName: 'CSS', customIcon: 'devicon-plain:css3-wordmark' },
+    meta: { elementType: 'library', breadcrumbName: 'CSS', customIcon: 'devicon-plain:css3' },
     children: [
         css_home
     ]

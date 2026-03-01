@@ -1,18 +1,39 @@
 <script setup lang="ts">
     import type { SidebarModuleData } from '@/types/sidebar';
     import SidebarComponent from './SidebarComponent.vue';
+    import { computed } from 'vue';
+    import { useRoute } from 'vue-router';
+    import { Icon } from '@iconify/vue';
 
     const props = defineProps<{ data: SidebarModuleData }>();
+    const route = useRoute();
+
+    const isCurrentModule = computed<boolean>(() => {
+        return route.matched.find((_route) => _route.name === props.data.routeName) != undefined;
+    })
+
+    const isCurrentRoute = computed<boolean>(() => {
+        return (route.name! as string).includes(props.data.routeName) && (route.name! as string).includes('home');
+    })
 </script>
 
 
 <template>
-    <div  class="p-2 rounded-md bg-black/5 hover:bg-black/10 transition-colors">
+    <div
+        class="flex flex-col transition-colors"
+        :class="(isCurrentModule) ? 'bg-white/10' : ''"
+    >
+        <router-link
+            :to="{ name: props.data.routeName }"
+            class="flex items-center gap-0.5 p-2 hover:bg-white/5 transition-colors font-bold"
+            :class="(isCurrentRoute) ? 'bg-white/10!' : ''"
+        >
+            <Icon v-if="isCurrentRoute" icon="mdi:menu-right" width="18" height="18" />
+            <p>{{ props.data.name }}</p>
+        </router-link>
+
         <div class="flex flex-col">
-            <router-link :to="{ name: props.data.routeName }" class="font-bold">{{ props.data.name }}</router-link>
-            <div class="flex flex-col pl-4">
-                <SidebarComponent v-for="component in props.data.components" :name="component.name" :route-name="component.routeName">{{ component.name }}</SidebarComponent>
-            </div>
+            <SidebarComponent v-for="component in props.data.components" :data="component" :route-name="component">{{ component.name }}</SidebarComponent>
         </div>
     </div>
 </template>

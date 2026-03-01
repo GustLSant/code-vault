@@ -4,7 +4,7 @@
 
 
 <template>
-    <p>Home do app</p>
+    <p>Home page do React</p>
 </template>
 
 

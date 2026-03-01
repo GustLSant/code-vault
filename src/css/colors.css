@@ -1,14 +1,19 @@
 :root {
-	--primary-color: #008CFF;
-	--secondary-color: #406380;
-	--accent-color: #eb8d00;
-	--danger-color: #D10718;
+	--primary-color:   rgb(0, 140, 255);
+	--secondary-color: rgb(64, 99, 128);
+	--accent-color:    rgb(235, 141, 0);
+	--danger-color:    rgb(209, 7, 24);
 
 	--background-color: rgb(230, 230, 230);
 	--text-color: black;
 
-	--sidebar-color: #0D1117;
-	--sidebar-text-color: #d2d2d2;
+	--sidebar-color:      rgb(13, 17, 23);
+	--sidebar-text-color: rgb(210, 210, 210);
+
+	--input-border-color: rgba(255,255,255, 0.3);
+	--input-bg-color: rgba(255,255,255, 0.05);
+
+	--hover-input-bg-color: rgba(255,255,255, 0.1)
 }
 
 .dark {
