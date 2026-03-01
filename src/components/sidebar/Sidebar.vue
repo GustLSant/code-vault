@@ -117,7 +117,7 @@
 
         <div class="grow"></div>
         
-        <footer class="flex flex-col gap-4">
+        <footer class="flex flex-col gap-4 px-2">
             <div class="flex flex-col gap-2">
                 <Button v-if="!isAppHomeRoute" @click="returnHomePage" variant="neutral" icon="mdi:home-outline" class="justify-center">
                     Página Inicial
