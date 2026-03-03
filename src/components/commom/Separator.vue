@@ -10,7 +10,7 @@
 <template>
     <div 
         :class="(props.variation === 'horizontal' ? 'h-px w-full' : 'w-px h-full')"
-        class="bg-(--secondary-color)"
+        class="bg-(--secondary-color) shrink-0"
     >
     </div>
 </template>

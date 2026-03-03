@@ -80,13 +80,13 @@
 
 
 <template>
-    <div class="sidebar w-2xs flex flex-col py-4 bg-(--sidebar-color) text-(--sidebar-text-color)">
+    <div class="sidebar w-2xs shrink-0 flex flex-col py-4 bg-(--sidebar-color) text-(--sidebar-text-color)">
         <div class="mb-10">
             <p class="text-xl">Game Atlas</p>
         </div>
         
         <div class="flex flex-col gap-4">
-            <div class="px-2">
+            <div class="px-3">
                 <TextInput v-model="filter" placeholder="Pesquisar Item" start-icon="mdi:search" />
             </div>
 
@@ -117,7 +117,7 @@
 
         <div class="grow"></div>
         
-        <footer class="flex flex-col gap-4 px-2">
+        <footer class="flex flex-col gap-4 px-3">
             <div class="flex flex-col gap-2">
                 <Button v-if="!isAppHomeRoute" @click="returnHomePage" variant="neutral" icon="mdi:home-outline" class="justify-center">
                     Página Inicial

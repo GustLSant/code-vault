@@ -6,9 +6,11 @@
 
 
 <template>
-    <div class="flex flex-col gap-6 grow p-4 text-(--text-color)">
+    <div class="flex flex-col gap-8">
         <Breadcrumb />
-        <router-view />
+        <div class="flex flex-col gap-6 basis-1 grow overflow-y-auto">
+            <router-view />
+        </div>
     </div>
 </template>
 

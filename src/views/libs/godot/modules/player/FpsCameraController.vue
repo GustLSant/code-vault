@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import PageHeader from '@/components/commom/PageHeader.vue';
-    import PageSubtitle from '@/components/commom/PageSubtitle.vue';
     import Separator from '@/components/commom/Separator.vue';
     import { Icon } from '@iconify/vue';
 
@@ -17,8 +16,6 @@
     </div>
 
     <Separator class="my-2" />
-
-    <PageSubtitle>Descrição</PageSubtitle>
     
     <p>aliwjdilçajwld</p>
 </template>

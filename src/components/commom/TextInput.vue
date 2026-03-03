@@ -4,15 +4,15 @@
     type TextInputProps = {
         placeholder?: string,
         startIcon?: string,
-        endIcon?: string,
-        endIconFuncion?: () => void,
         type?: string,
         name?: string,
+        id?: string,
+        variant?: 'light' | 'dark',
         inputmode?: "text" | "email" | "search" | "tel" | "url" | "none" | "numeric" | "decimal",
         errorMessage?: string,
         mask?: (_val: string) => string,
         maxLength?: number,
-        inputClass?: string,
+        inputClassOverride?: string,
     }
 
     const modelValue = defineModel<string>({ default: '' });
@@ -42,12 +42,7 @@
 <template>
     <div class="flex flex-col gap-0.5">
         <div
-            class="relative flex shadow-md min-w-[150px] p-2 rounded-md bg-(--input-bg-color) border border-(--input-border-color) hover:border-primary focus:outline-(--input-focus-color)"
-            :class="[
-                props.startIcon ? 'pl-10' : '',
-                props.endIcon ? 'rounded-r-none! border-r-0!' : '',
-                props.errorMessage ? 'border-red-500/50!' : '',
-            ]"
+            class="relative flex items-center"
         >
             <input
                 :value="modelValue"
@@ -56,23 +51,21 @@
                 @blur="(e: FocusEvent) => emit('blur', e)"
                 @focus="(e: FocusEvent) => emit('focus', e)"
                 :type="props.type || 'text'"
+                :id="props.id"
                 :name="props.name"
                 :autocomplete="props.name"
                 :inputmode="props.inputmode || 'text'"
                 :maxlength="props.maxLength || undefined"
                 :placeholder="props.placeholder"
-                class="w-full text-base outline-0"
-                :class="props.inputClass"
+                class="w-full p-2 rounded-md border text-base shadow-md outline-0"
+                :class="[
+                    props.startIcon ? 'pl-10' : '',
+                    props.variant === 'dark' ? 'text-black bg-(--input-bg-color-dark) border-(--input-border-color-dark)' : 'text-white bg-(--input-bg-color) border-(--input-border-color)',
+                    props.errorMessage ? 'border-red-500/50!' : '',
+                    props.inputClassOverride,
+                ]"
             />
             <Icon v-if="props.startIcon" :icon="props.startIcon" width="24" height="24" class="absolute left-2 top-1/2 -translate-y-1/2 opacity-50" />
-
-            <div
-                v-if="props.endIcon"
-                class="flex items-center justify-center rounded-r-md primary-bg-gradient text-white px-2 transition duration-150 hover:cursor-pointer hover:brightness-110"
-                @click="(props.endIconFuncion ? props.endIconFuncion() : () => {})"
-            >
-                <Icon :icon="props.endIcon" width="24" height="24" />
-            </div>
         </div>
 
         <p v-if="props.errorMessage" class="text-start text-sm text-red-500/75">

@@ -10,10 +10,11 @@
 	--sidebar-color:      rgb(13, 17, 23);
 	--sidebar-text-color: rgb(210, 210, 210);
 
-	--input-border-color: rgba(255,255,255, 0.3);
-	--input-bg-color: rgba(255,255,255, 0.05);
+	--input-border-color: rgba(255,255,255, 0.2);
+	--input-bg-color:     rgba(255,255,255, 0.05);
 
-	--hover-input-bg-color: rgba(255,255,255, 0.1)
+	--input-border-color-dark: rgba(0,0,0, 0.2);
+	--input-bg-color-dark:     rgba(0,0,0, 0.05);
 }
 
 .dark {

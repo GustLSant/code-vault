@@ -24,6 +24,13 @@ const vue_input_button: RouteRecordRaw = {
     meta: { elementType: 'component', breadcrumbName: 'Button' }
 }
 
+const vue_input_textInput: RouteRecordRaw = {
+    path: 'text-input',
+    name: 'vue.input.textInput',
+    component: () => import('../views/libs/vue/modules/inputs/TextInput.vue'),
+    meta: { elementType: 'component', breadcrumbName: 'Text Input' }
+}
+
 
 
 const vue_input: RouteRecordRaw = {
@@ -34,6 +41,7 @@ const vue_input: RouteRecordRaw = {
     children: [
         vue_input_home,
         vue_input_button,
+        vue_input_textInput,
     ]
 }
 

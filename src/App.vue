@@ -12,11 +12,15 @@
 		:class="themeStore.theme"
 	>
 		<Sidebar />
-		<router-view />
+		<main class="flex flex-col basis-1 grow p-4 text-(--text-color)">
+			<router-view />
+		</main>
 	</div>
 </template>
 
 
 <style scoped>
-
+	main > div {
+		flex-grow: 1;
+	}
 </style>

@@ -25,7 +25,7 @@
     >
         <router-link
             :to="{ name: props.data.routeName }"
-            class="flex items-center gap-0.5 p-2 hover:bg-white/5 transition-colors font-bold"
+            class="flex items-center gap-0.5 py-2 px-4 hover:bg-white/5 transition-colors font-bold"
             :class="(isCurrentRoute) ? 'bg-white/10!' : ''"
         >
             <Icon v-if="isCurrentRoute" icon="mdi:menu-right" width="18" height="18" />

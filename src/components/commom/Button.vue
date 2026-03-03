@@ -20,8 +20,8 @@
             style['backgroundColor'] = 'var(--input-bg-color)';
             style['color'] = 'white';
 
-            style['--hover-color'] = 'var(--hover-input-bg-color)';
-            style['--hover-brightness'] = '100%';
+            style['--hover-color'] = 'var(--input-bg-color)';
+            style['--hover-brightness'] = '90%';
         }
         else {
             const variantSulfix: string = props.variant.split('-')[1]!;
@@ -32,7 +32,7 @@
                 style['color'] = 'white';
 
                 style['--hover-color'] = `var(${colorVariable})`;
-                style['--hover-brightness'] = '120%';
+                style['--hover-brightness'] = '110%';
             }
             else {
                 style['border'] = `1px solid var(${colorVariable})`;
