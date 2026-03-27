@@ -94,22 +94,24 @@
 
                 <template v-if="isAppHomeRoute">
                     <template v-if="filteredLibrariesSidebarData.length > 0">
-                        <template v-for="(library, idx) in filteredLibrariesSidebarData" :key="library.routeName">
-                            <SidebarLibrary :data="library" />
-                            <Separator v-if="idx < filteredLibrariesSidebarData.length - 1" class="bg-white/20" />
-                        </template>
+                        <SidebarLibrary
+                            v-for="(library) in filteredLibrariesSidebarData"
+                            :key="library.routeName"
+                            :data="library"
+                        />
                     </template>
-                    <p v-else>Nenhuma library encontrada</p>
+                    <p v-else class="p-4 opacity-60">Nenhuma library encontrada</p>
                 </template>
 
                 <template v-else>
                     <template v-if="filteredModulesSidebarData.length > 0">
-                        <template v-for="(module, idx) in filteredModulesSidebarData" :key="module.routeName">
-                            <SidebarModule :data="module" />
-                            <Separator v-if="idx < filteredModulesSidebarData.length - 1" class="bg-white/20" />
-                        </template>
+                        <SidebarModule
+                            v-for="(module) in filteredModulesSidebarData"
+                            :key="module.routeName"
+                            :data="module"
+                        />
                     </template>
-                    <p v-else>Nenhum module encontrado</p>
+                    <p v-else class="p-4 opacity-60">Nenhum module encontrado</p>
                 </template>
 
             </div>

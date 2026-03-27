@@ -8,8 +8,8 @@
     import { ICONFY_REQUIREMENT, TAILWIND_REQUIREMENT, VUE_REQUIREMENT } from '@/data/requirements';
     import { downloadComponentFile } from '@/utils/data';
     import TextInput from '@/components/commom/TextInput.vue';
-import CodeContainer from '@/components/commom/CodeContainer.vue';
-import PageSubtitle from '@/components/commom/PageSubtitle.vue';
+    import CodeContainer from '@/components/commom/CodeContainer.vue';
+    import PageSubtitle from '@/components/commom/PageSubtitle.vue';
 
     const route = useRoute();
 </script>
