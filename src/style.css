@@ -1,9 +1,14 @@
 @import url(css/colors.css);
 @import url(css/scrollbar.css);
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.zen-dots {
+  font-family: 'Zen Dots', monospace;
 }

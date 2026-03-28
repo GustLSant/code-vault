@@ -81,8 +81,8 @@
 
 <template>
     <div class="sidebar w-2xs shrink-0 flex flex-col py-4 bg-(--sidebar-color) text-(--sidebar-text-color)">
-        <div class="mb-10">
-            <p class="text-xl">Game Atlas</p>
+        <div class="mb-4 p-4">
+            <p class="text-3xl zen-dots italic font-bold">CodeVault</p>
         </div>
         
         <div class="flex flex-col gap-4">
@@ -128,7 +128,7 @@
             </div>
 
             <div class="flex flex-col items-center gap-0.5">
-                <p>Game Atlas</p>
+                <p>CodeVault</p>
                 <p class="text-sm opacity-60">v0.0.1</p>
             </div>
         </footer>
